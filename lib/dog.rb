@@ -47,7 +47,10 @@ class Dog
   end
   
   def self.find_by_id (id)
-    
+        sql = <<-SQL
+      SELECT * FROM pokemon
+      WHERE id = ?
+    SQL
     
   end
 end
