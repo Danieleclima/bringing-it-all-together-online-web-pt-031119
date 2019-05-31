@@ -76,4 +76,10 @@ class Dog
     result = DB[:conn].execute(sql, name)[0]
     Dog.new(name: result[1], breed: result[2], id: result[0])
   end
+  
+  def update
+  sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
+  DB[:conn].execute(sql, self.name, self.grade, self.id)
+end
+  
 end
