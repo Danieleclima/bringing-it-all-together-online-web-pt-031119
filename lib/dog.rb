@@ -47,12 +47,11 @@ class Dog
   end
   
   def self.find_by_id (id)
-    
     sql = <<-SQL
       SELECT * FROM pokemon
       WHERE id = ?
       SQL
-    result = db.execute(sql,id)[0]
-    Pokemon.new(id: result[0], name: result[1], type: result[2], db: db)
+    result = DB[:conn].execute(sql,id)[0]
+    Dog.new(id: result[0], name: result[1], breed: result[2])
   end
 end
