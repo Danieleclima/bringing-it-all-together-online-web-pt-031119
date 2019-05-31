@@ -41,11 +41,10 @@ class Dog
   end
   
   def self.create(attributes)
-    attributes.each do |key, value| 
+     
       dog = self.new.send(("#{key}="), value)
-    end
-    dog
-    binding.pry
+
+ 
   end
   
 end
