@@ -1,3 +1,5 @@
+require
+
 class Dog 
   attr_accessor :name, :breed
   attr_reader :id 
@@ -39,10 +41,12 @@ class Dog
   end
   
   def self.create(attributes)
+    binding.pry
     attributes.each do |key, value| 
-     dog = self.new.send(("#{key}="), value)
+      dog = self.new.send(("#{key}="), value)
     end
     dog
+    binding.pry
   end
   
 end
