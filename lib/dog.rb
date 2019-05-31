@@ -67,6 +67,6 @@ class Dog
   end
   
   def new_from_db (array)
-    
+    new_dog = Dog.new()
   end
 end
